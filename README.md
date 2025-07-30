@@ -1,69 +1,46 @@
-# React + TypeScript + Vite
+# Seiko Serial Number Decoder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application that helps you decode Seiko watch serial numbers to determine their manufacturing date and other details. The app features a beautiful Japanese snowflake-themed design with light and dark mode support.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Serial Number Decoding**: Decode 6 or 7 digit Seiko serial numbers
+- **Multiple Date Possibilities**: View all possible manufacturing dates based on the serial number
+- **Advanced Options**: Toggle between different Seiko watch characteristics
+- **Responsive Design**: Works on desktop and mobile devices
+- **Dark & Light Modes**: Automatically adapts to system preferences
+- **Beautiful UI**: Japanese snowflake theme with smooth animations
 
-## Expanding the ESLint configuration
+## How to Use
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Enter your Seiko watch's serial number (6 or 7 digits)
+2. (Optional) Toggle advanced options for more specific results
+3. View the possible manufacturing dates and details
+4. Toggle between light and dark mode using the theme button
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Run in development:**
+   ```bash
+   npm run dev
+   ```
+   The site will be available at [http://localhost:5173](http://localhost:5173)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. **Build for static deployment:**
+   ```bash
+   npm run build
+   ```
+   The static site will be output to the `build/` folder.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+4. **Preview the build:**
+   ```bash
+   npm run preview
+   ```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Deployment
+- Deploy the contents of the `build/` folder to any static hosting (Netlify, Vercel, GitHub Pages, etc.)
