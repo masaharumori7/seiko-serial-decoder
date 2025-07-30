@@ -27,6 +27,21 @@ function App() {
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
+  // Set up dark mode detection on component mount
+  useEffect(() => {
+    // Check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setDarkMode(prefersDark);
+    
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => setDarkMode(e.matches);
+    mediaQuery.addEventListener('change', handleChange);
+    
+    // Clean up event listener
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   // Toggle dark mode
   useEffect(() => {
     if (darkMode) {
