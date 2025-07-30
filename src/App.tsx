@@ -108,7 +108,7 @@ function App() {
         if (hasWaterResist === false && year > 1971) continue;
         
         if (hasWaterResist === true) {
-          notes.push('"Water Resist" marking suggests 1968-1971 production');
+          notes.push('"Water Resist" marking suggests 1968-1971 or later production');
         } else if (hasWaterResist === false && year > 1971) {
           notes.push('"Waterproof" marking suggests pre-1968 production');
         }
@@ -271,31 +271,37 @@ function App() {
                 <p>Case back has "Water Resist" marking?</p>
                 <div className="radio-group">
                   <label>
-                    <input
-                      type="radio"
-                      name="waterResist"
-                      checked={hasWaterResist === true}
-                      onChange={() => setHasWaterResist(true)}
-                    />
-                    Yes
+                    <span>
+                      <input
+                        type="radio"
+                        name="waterResist"
+                        checked={hasWaterResist === true}
+                        onChange={() => setHasWaterResist(true)}
+                      />
+                      <span>Yes</span>
+                    </span>
                   </label>
                   <label>
-                    <input
-                      type="radio"
-                      name="waterResist"
-                      checked={hasWaterResist === false}
-                      onChange={() => setHasWaterResist(false)}
-                    />
-                    No
+                    <span>
+                      <input
+                        type="radio"
+                        name="waterResist"
+                        checked={hasWaterResist === false}
+                        onChange={() => setHasWaterResist(false)}
+                      />
+                      <span>No</span>
+                    </span>
                   </label>
                   <label>
-                    <input
-                      type="radio"
-                      name="waterResist"
-                      checked={hasWaterResist === null}
-                      onChange={() => setHasWaterResist(null)}
-                    />
-                    Not Sure
+                    <span>
+                      <input
+                        type="radio"
+                        name="waterResist"
+                        checked={hasWaterResist === null}
+                        onChange={() => setHasWaterResist(null)}
+                      />
+                      <span>Not Sure</span>
+                    </span>
                   </label>
                 </div>
               </div>
@@ -304,31 +310,37 @@ function App() {
                 <p>Case back has a boxed mark (like [X] or [XX])?</p>
                 <div className="radio-group">
                   <label>
-                    <input
-                      type="radio"
-                      name="boxedMark"
-                      checked={hasBoxedMark === true}
-                      onChange={() => setHasBoxedMark(true)}
-                    />
-                    Yes
+                    <span>
+                      <input
+                        type="radio"
+                        name="boxedMark"
+                        checked={hasBoxedMark === true}
+                        onChange={() => setHasBoxedMark(true)}
+                      />
+                      <span>Yes</span>
+                    </span>
                   </label>
                   <label>
-                    <input
-                      type="radio"
-                      name="boxedMark"
-                      checked={hasBoxedMark === false}
-                      onChange={() => setHasBoxedMark(false)}
-                    />
-                    No
+                    <span>
+                      <input
+                        type="radio"
+                        name="boxedMark"
+                        checked={hasBoxedMark === false}
+                        onChange={() => setHasBoxedMark(false)}
+                      />
+                      <span>No</span>
+                    </span>
                   </label>
                   <label>
-                    <input
-                      type="radio"
-                      name="boxedMark"
-                      checked={hasBoxedMark === null}
-                      onChange={() => setHasBoxedMark(null)}
-                    />
-                    Not Sure
+                    <span>
+                      <input
+                        type="radio"
+                        name="boxedMark"
+                        checked={hasBoxedMark === null}
+                        onChange={() => setHasBoxedMark(null)}
+                      />
+                      <span>Not Sure</span>
+                    </span>
                   </label>
                 </div>
               </div>
